@@ -133,6 +133,10 @@
       font-size: 1rem;
     }
 
+    .ui.modal .ui.header small {
+      margin-left: 1em;
+    }
+
 
   </style>
 
@@ -178,11 +182,43 @@
       updateCounter();
       setInterval(updateCounter, 1000);
 
+
+      $('.card .bottom.primary.button').click(function(e) {
+        $('.ui.modal').modal('show');
+      });
+
     })
   ;
   </script>
 </head>
 <body>
+
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Article ajouté au panier
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="assets/images/fatboy_geek1.png">
+    </div>
+    <div class="description">
+      <div class="ui header">Star Wars <small>by obiwan999</small></div>
+      <p>The light is strong with this one.</p>
+      <span class="ui label tag">15€</span>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Retour
+    </div>
+    <div class="ui positive right labeled icon button">
+      Passer la commande (15€)
+      <i class="cart icon"></i>
+    </div>
+  </div>
+</div>
+
 
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
