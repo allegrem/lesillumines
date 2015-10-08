@@ -98,6 +98,15 @@
       }
     }
 
+
+    /* perso common */
+
+    .ui.large.pointing.menu .main.item {
+      font-weight: bold;
+      color: white !important;
+    }
+
+
     /* perso */
 
     .ui.card .ui.label.tag {
@@ -117,6 +126,11 @@
 
     .ui.footer.vertical.segment {
       margin-top: 5em;
+    }
+
+    .ui.header .right.floated {
+      float: right;
+      font-size: 1rem;
     }
 
 
@@ -148,7 +162,7 @@
       ;
 
 
-      setInterval(function() {
+      var updateCounter = function() {
         var diff = Math.round((Date.UTC(2015, 9, 15, 0, 0, 0) - Date.now()) / 1000);
         var sec = diff % 60;
         diff = (diff - sec) / 60;
@@ -159,7 +173,10 @@
         var days = diff;
         var txt = days + ' jours, ' + hours + ' heures, ' + min + ' minutes, ' + sec + ' secondes';
         $('#time-remaining').text(txt);
-      }, 1000);
+      };
+
+      updateCounter();
+      setInterval(updateCounter, 1000);
 
     })
   ;
@@ -170,8 +187,10 @@
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
   <div class="ui container">
-    <a class="active item" href="index.html">Designs du moment</a>
+    <a class="main item" href="index.html">Les Illuminés</a>
+    <a class="active item" href="index.html">Achetez</a>
     <a class="item" href="vote.html">Votez</a>
+    <a class="item" href="post.html">Publiez</a>
     <a class="item">Discutez</a>
     <a class="item">Aide</a>
     <div class="right menu">
@@ -187,8 +206,10 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
-  <a class="active item" href="index.html">Designs du moment</a>
+  <a class="main item" href="index.html">Les Illuminés</a>
+  <a class="active item" href="index.html">Achetez</a>
   <a class="item" href="vote.html">Votez</a>
+  <a class="item" href="post.html">Publiez</a>
   <a class="item">Discutez</a>
   <a class="item">Aide</a>
   <a class="item">Connexion</a>
@@ -205,8 +226,10 @@
         <a class="toc item">
           <i class="sidebar icon"></i>
         </a>
-        <a class="active item" href="index.html">Designs du moment</a>
+        <a class="main item" href="index.html">Les Illuminés</a>
+        <a class="active item" href="index.html">Achetez</a>
         <a class="item" href="vote.html">Votez</a>
+        <a class="item" href="post.html">Publiez</a>
         <a class="item">Discutez</a>
         <a class="item">Aide</a>
         <div class="right item">
@@ -326,7 +349,13 @@
       <h4 class="ui horizontal header divider">
         <span>Interview</span>
       </h4>
-      <h3 class="ui header">Andy Warhol, designer du mois</h3>
+      <h3 class="ui header">
+        Andy Warhol, designer du mois
+        <span class="right floated">
+          131 <i class="thumbs outline up icon"></i>
+          20 <i class="comment outline icon"></i>
+        </span>
+      </h3>
       <img class="ui circular small right floated image" src="assets/images/andywarhol.jpg">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -338,7 +367,13 @@
       <h4 class="ui horizontal header divider">
         <span>Conseil</span>
       </h4>
-      <h3 class="ui header">Optimiser ses designs avant envoi</h3>
+      <h3 class="ui header">
+        Optimiser ses designs avant envoi
+        <span class="right floated">
+          62 <i class="thumbs outline up icon"></i>
+          36 <i class="comment outline icon"></i>
+        </span>
+      </h3>
       <img class="ui small right floated image" src="assets/images/rulers.png">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
