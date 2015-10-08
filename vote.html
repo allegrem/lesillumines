@@ -138,6 +138,18 @@
         .sidebar('attach events', '.toc.item')
       ;
 
+      // vote
+      $('.extra.content .primary.button').click(function(e) {
+        var $button = $(e.target);
+        if($button.hasClass('icon')) {
+          $button = $button.closest('.button');
+        }
+        $button.removeClass('primary').addClass('green disabled');
+        var $counter = $button.closest('.card').find('.top.content data');
+        $counter.text(parseInt($counter.text()) + 1);
+        $counter.parent().transition('shake');
+      });
+
     })
   ;
   </script>
@@ -209,7 +221,7 @@
         <span class="right floated">
           <i class="comment outline icon"></i> 31 commentaires
         </span>
-        <i class="thumbs outline up icon"></i> 172 votes
+        <div><i class="thumbs outline up icon"></i> <data>172</data> votes</div>
       </div>
       <div class="image">
         <a class="ui violet ribbon label">Geek</a>
@@ -239,7 +251,7 @@
         <span class="right floated">
           <i class="comment outline icon"></i> 20 commentaires
         </span>
-        <i class="thumbs outline up icon"></i> 152 votes
+        <div><i class="thumbs outline up icon"></i> <data>152</data> votes</div>
       </div>
       <div class="image">
         <a class="ui pink ribbon label">Kidz</a>
@@ -269,7 +281,7 @@
         <span class="right floated">
           <i class="comment outline icon"></i> 23 commentaires
         </span>
-        <i class="thumbs outline up icon"></i> 121 votes
+        <div><i class="thumbs outline up icon"></i> <data>121</data> votes</div>
       </div>
       <div class="image">
         <a class="ui pink ribbon label">Kidz</a>
@@ -299,7 +311,7 @@
         <span class="right floated">
           <i class="comment outline icon"></i> 3 commentaires
         </span>
-        <i class="thumbs outline up icon"></i> 101 votes
+        <div><i class="thumbs outline up icon"></i> <data>101</data> votes</div>
       </div>
       <div class="image">
         <a class="ui green ribbon label">Design</a>
@@ -329,7 +341,7 @@
         <span class="right floated">
           <i class="comment outline icon"></i> 91 commentaires
         </span>
-        <i class="thumbs outline up icon"></i> 72 votes
+        <div><i class="thumbs outline up icon"></i> <data>72</data> votes</div>
       </div>
       <div class="image">
         <a class="ui violet ribbon label">Geek</a>
@@ -359,7 +371,7 @@
         <span class="right floated">
           <i class="comment outline icon"></i> 3 commentaires
         </span>
-        <i class="thumbs outline up icon"></i> 17 votes
+        <div><i class="thumbs outline up icon"></i> <data>17</data> votes</div>
       </div>
       <div class="image">
         <a class="ui green ribbon label">Design</a>
